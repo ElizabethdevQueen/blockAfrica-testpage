@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import clsx from "clsx";
-import { fade, makeStyles } from "@material-ui/core/styles";
-// import AppBar from '@material-ui/core/AppBar';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
 import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import RedLogo from "../Assets/redlogo.png";
-import { Typography } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > svg': {
+      margin: theme.spacing(2),
+    },
+  },
   grow: {
     flexGrow: 1,
   },
@@ -29,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
   logoText: {
     color: theme.palette.secondary.main,
-    fontSize: "2rem"
+    fontSize: "2.5rem",
+    fontWeight: 900
   },
   icons: {
     width: "120px",
@@ -46,26 +48,24 @@ const useStyles = makeStyles((theme) => ({
     //   height: "100px"
     "& .MuiSvgIcon-root": {
         color: theme.palette.secondary.main,
-        // height: "100px"
+        fontSize: 40  
     },
     "&:hover .MuiTouchRipple-root": {
         color: theme.palette.secondary.main,
-        border: "none"
+        height: "100px"
     }
   },
   content: {
     flexGrow: 1,
+    '& .MuiToolbar-root': {
+        padding: ".5rem"
+    }
   },
 }));
 
+
 function Header() {
   const classes = useStyles();
-  //   const [open, setOpen] = useState(false);
-
-  const formatEmail = (email = "") => {
-    const result = email.substring(0, email.indexOf("@"));
-    return `${result}...`;
-  };
 
   return (
       <section className={classes.content}>
@@ -77,9 +77,9 @@ function Header() {
                 alt="profile"
                 className={classes.logoDivStyle}
               />
-              <Typography className={classes.logoText}>
+              <div className={classes.logoText}>
                   <h1>ribbon</h1>
-              </Typography>
+              </div>
             </div>
             <div className={classes.grow} />
             <div className={classes.icons}>
@@ -88,6 +88,7 @@ function Header() {
                   className={classes.userButton}
               >
                 <AccountCircleIcon />
+                {/* <AccountCircleIcon style={{ color: "secondary", fontSize: 40 }} /> */}
               </IconButton>{" "}
               &nbsp;
               <IconButton
