@@ -1,52 +1,48 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Box from "@material-ui/core/Box";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import { makeStyles } from "@material-ui/core";
+import { Avatar, Divider, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#e33371",
+    backgroundColor: "#F93476",
     borderRadius: "20px",
     height: "auto",
-    padding: "1rem",
+    padding: ".5rem",
     display: "flex",
     justifyContent: "space-evenly",
     margin: "1rem",
     alignItems: "center"
   },
-  listItem: {
-    backgroundColor: "#fff",
-    border: "1px solid #fff",
-    borderRadius: "50%",
-    height: "60px",
-    width: "60px",
+  border: {
+    height: "170px",
+    backgroundColor: "white"
+  },
+  infoBox: {
     display: "flex",
-    alignItems: "center",
-    color: theme.palette.secondary.main,
-    padding: ".5rem"
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
-  listItemText: {
-    color: "#fff",
-    fontFamily: "Roboto",
-    fontWeight: 900,
-    fontSize: "2rem"
-  },
-  listItem2: {
+  avatar: {
     backgroundColor: "#fff",
-    border: "1px solid #fff",
-    borderRadius: "50%",
-    height: "60px",
-    width: "60px",
-    paddingRight: "2px",
-    color: theme.palette.primary.light,
+    padding: 30
   },
-  listItemText1: {
-    fontFamily: "Roboto",
-    fontWeight: 900,
+  afya: {
+    color: "#D63227",
+    fontWeight: 700
+  },
+  zar: {
+    color: "#0AC4E9",
+    fontWeight: 700
+  },
+  infoText: {
+    color: "#fff",
     fontSize: "2rem"
+  },
+  infoSubText: {
+    color: "#fff",
+    fontSize: ".8rem"
   }
 }));
 
@@ -57,31 +53,23 @@ const InfoBar = () => {
     <>
       <CssBaseline />
       <Box className={classes.root}>
-        <List component="nav">
-          <ListItem className={classes.listItem}>
-            <ListItemText primary="AFYA" />
-          </ListItem>
-          <ListItem>
-            <ListItemText  className={classes.listItemText} primary="143.00" />
-          </ListItem>
-          <ListItem >
-            <ListItemText className={classes.listItemText} primary="Balance" />
-          </ListItem>
-        </List>
+        <Box className={classes.infoBox}>
+          <Avatar className={classes.avatar}>
+            <Typography component="h1" className={classes.afya}>AFYA</Typography>
+          </Avatar>
+          <Typography className={classes.infoText}>143.00</Typography>
+          <Typography className={classes.infoSubText}>Balance</Typography>
+        </Box>
         {" "}
-        <div className={classes.border}></div>
+        <Divider orientation="vertical" className={classes.border} />
         {" "}
-        <List component="nav">
-          <ListItem className={classes.listItem2}>
-            <ListItemText primary="ZAR" />
-          </ListItem>
-          <ListItem className={classes.listItemText}>
-            <ListItemText primary="R21.00" />
-          </ListItem>
-          <ListItem className={classes.listItemText}>
-            <ListItemText primary="Equivalent" />
-          </ListItem>
-        </List>
+        <Box className={classes.infoBox}>
+          <Avatar className={classes.avatar}>
+          <Typography component="h1" className={classes.zar}>ZAR</Typography>
+          </Avatar>
+          <Typography className={classes.infoText}>R21.00</Typography>
+          <Typography className={classes.infoSubText}>Equivalent</Typography>
+        </Box>
       </Box>
     </>
   );
