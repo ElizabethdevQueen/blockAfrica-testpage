@@ -17,12 +17,13 @@ const useStyles = makeStyles({
   },
   heading: {
     marginBottom: "10px",
-    paddingLeft: "1rem"
+    paddingLeft: "1rem",
+    color: "#fff"
   },
   activity: {
       paddingTop: "1rem",
       paddingBottom: "2rem",
-      backgroundColor: "grey",
+      backgroundColor: "#CCC9C9",
       height: "auto"
   },
   logoDivStyle: {
@@ -34,8 +35,14 @@ const useStyles = makeStyles({
     height: "40px",
     border: "1px solid #4791db",
     borderRadius: "50%",
-    backgroundColor: "#4791db",
-    
+    backgroundColor: "red"
+  },
+  logoStyle1: {
+    width: "40px",
+    height: "40px",
+    border: "1px solid red",
+    borderRadius: "50%",
+    backgroundColor: "red"
   },
   tableText: {
     fontWeight: 900,
@@ -81,7 +88,7 @@ const RecentActivity = () => {
                 <img
                 src={BP}
                 alt="profile"
-                className={classes.logoStyle}
+                className={classes.logoStyle1}
               />
                 </TableCell>
                 <TableCell align="left" className={classes.tableText}>Blood Pressure Check</TableCell>
