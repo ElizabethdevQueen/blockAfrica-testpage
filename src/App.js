@@ -4,6 +4,10 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import { Box, makeStyles } from "@material-ui/core";
 import Header from "./components/Headers";
+import InfoBar from "./components/InfoBar";
+import SelectCurrency from "./components/SelectCurrency";
+import RecentActivity from "./components/RecentActivity";
+import FooterNavbar from "./components/FooterNavbar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
   mainBox: {
     backgroundColor: "#fff",
-    height: "100vh",
-    width: "50%",
+    height: "auto",
+    width: "40%",
     borderRadius: "3rem",
     paddingTop: "2rem",
     border: "12px solid #000",
@@ -31,7 +35,10 @@ export default function App() {
       <Container fixed className={classes.root}>
         <Box className={classes.mainBox}>
           <Header />
-          <CssBaseline />
+          <InfoBar />
+          <SelectCurrency />
+          <RecentActivity />
+          <FooterNavbar />
         </Box>
       </Container>
     </>
